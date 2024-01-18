@@ -619,6 +619,7 @@ ul {
 /*----------------------------------------*/
 
 .categorie-search-box form {
+    margin: 35px 0;
     color: #a9a9a9;
     padding: 0;
     position: relative;
@@ -5635,7 +5636,8 @@ a.shipping-calculator-button:hover {
     border-bottom: 1px solid #ebebeb;
 }
 
-.dashboard-list li a {
+.dashboard-list li a, .dashboard-list li button {
+    all: unset;
     color: #c59340;
     display: block;
     font-size: 14px;
@@ -5712,6 +5714,7 @@ a.shipping-calculator-button:hover {
 }
 
 .log-out {
+    all: unset;
     color: #c59340;
 }
 

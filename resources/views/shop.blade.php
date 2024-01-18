@@ -2,7 +2,7 @@
 <html class="no-js" lang="zxx">
 
 
-<!-- Mirrored from htmldemo.net/pander/pander-v3/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2024 02:13:55 GMT -->
+<!-- Mirrored from htmldemo.net/pander/pander-v3/{{url('shop')}} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2024 02:13:55 GMT -->
 @include('template.css')
 
 <body>
@@ -538,7 +538,7 @@
                         </div>
                         <!-- Single Banner Start -->
                         <div class="sidebar-banner mt-30">
-                            <a href="shop.html"><img class="ful" src="img/banner/b14.jpg" alt="slider-banner"></a>
+                            <a href="{{url('shop')}}"><img class="ful" src="img/banner/b14.jpg" alt="slider-banner"></a>
                         </div>
                         <!-- Single Banner End -->
                     </div>
@@ -555,5 +555,5 @@
 </body>
 
 
-<!-- Mirrored from htmldemo.net/pander/pander-v3/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2024 02:13:55 GMT -->
+<!-- Mirrored from htmldemo.net/pander/pander-v3/{{url('shop')}} by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2024 02:13:55 GMT -->
 </html>

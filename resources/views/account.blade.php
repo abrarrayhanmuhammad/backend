@@ -1,3 +1,13 @@
+{{-- @php
+    use App\Models\User;
+    $user = Auth::user();
+    $admin = User::where('role', 'admin')->first();
+@endphp --}}
+
+@use(App\Models\User)
+@php($user = Auth::user())
+@php($admin = User::where('role', 'admin')->first())
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -18,7 +28,7 @@
         <div class="breadcrumb-area">
             <div class="container">
                 <ol class="breadcrumb breadcrumb-list">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
                     <li class="breadcrumb-item active">my account</li>
                 </ol>
             </div>
@@ -32,14 +42,17 @@
                         <div class="row align-items-center no-gutters">
                             <div class="col-xl-3 col-lg-3 col-md-6">
                                 <div class="d-single-info">
-                                    <p class="user-name">Hello <span>yourmail@info</span></p>
-                                    <p>(not yourmail@info? <a class="log-out" href="#">Log Out</a>)</p>
+                                    <form id="logout" method="POST" action="{{ route('logout') }}" x-data>
+                                        @csrf
+                                        <p class="user-name">Hello <span>{{$user->email}}</span></p>
+                                        <p>(not your email? <button class="log-out" type="submit">Log Out</button> )</p>
+                                    </form>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-4 col-md-6">
                                 <div class="d-single-info">
                                     <p>Need Assistance? Customer service at.</p>
-                                    <p>admin@example.com.</p>
+                                    <p>{{$admin->email}}.</p>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6">
@@ -60,19 +73,30 @@
                             <!-- Nav tabs -->
                             <ul class="nav flex-column dashboard-list" role="tablist">
                                 <li><a class="nav-link active" data-bs-toggle="tab" href="#dashboard">Dashboard</a></li>
-                                <li> <a class="nav-link" data-bs-toggle="tab" href="#orders">Orders</a></li>
+                                <li><a class="nav-link" data-bs-toggle="tab" href="#orders">Orders</a></li>
                                 <li><a class="nav-link" data-bs-toggle="tab" href="#downloads">Downloads</a></li>
                                 <li><a class="nav-link" data-bs-toggle="tab" href="#address">Addresses</a></li>
                                 <li><a class="nav-link" data-bs-toggle="tab" href="#account-details">Account details</a></li>
-                                <li><a class="nav-link" href="{{url('login')}}">logout</a></li>
+
+                                <li>
+                                    <form id="logout" method="POST" action="{{ route('logout') }}" x-data>
+                                        @csrf
+        
+                                        <button type="submit" style="cursor: pointer">Log Out</button>
+                                       
+                                    </form>
+                                </li>
+
+
+                                {{-- <li><a class="nav-link" href="{{route('logout')}}">logout</a></li> --}}
                             </ul>
                         </div>
                         <div class="col-lg-10">
                             <!-- Tab panes -->
-                            <div class="tab-content dashboard-content mt-all-40">
+                            <div id="tab-panes" class="tab-content dashboard-content mt-all-40">
                                 <div id="dashboard" class="tab-pane fade show active">
                                     <h3>Dashboard </h3>
-                                    <p>From your account dashboard. you can easily check & view your <a href="#">recent orders</a>, manage your <a href="#">shipping and billing addresses</a> and <a href="#">edit your password and account details.</a></p>
+                                    <p>From your account dashboard. you can easily check & view your <a href="#">recent orders</a>, manage your <a href="#">shipping and billing addresses</a> and <a href="#account-details">edit your password and account details.</a></p>
                                 </div>
                                 <div id="orders" class="tab-pane fade">
                                     <h3>Orders</h3>
@@ -126,64 +150,75 @@
                                     <p>The following addresses will be used on the checkout page by default.</p>
                                     <h4 class="billing-address">Billing address</h4>
                                     <a class="view" href="#">edit</a>
-                                    <p>Bayazid Hasan</p>
+                                    <p>{{$user->firstname}}</p>
                                     <p>Bangladesh</p>
                                 </div>
                                 <div id="account-details" class="tab-pane fade">
                                     <h3>Account details </h3>
                                     <div class="register-form login-form clearfix">
-                                        <form action="#">
+                                        <form method="POST" action="{{route('user')}}">
+                                            <input type="hidden" name="id" value="{{$user->id}}">
+
                                             <div class="form-group row align-items-center">
                                                 <label class="col-lg-3 col-md-4 col-form-label">Social title</label>
                                                 <div class="col-lg-6 col-md-8">
-                                                    <span class="custom-radio"><input name="id_gender" value="1" type="radio"> Mr.</span>
-                                                    <span class="custom-radio"><input name="id_gender" value="1" type="radio"> Mrs.</span>
+                                                    <span class="custom-radio"><input name="title" @checked($user->title == "Mr.") value="Mr." type="radio"> Mr.</span>
+                                                    <span class="custom-radio"><input name="title" @checked($user->title == "Mrs.") value="Mrs." type="radio"> Mrs.</span>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="f-name" class="col-lg-3 col-md-4 col-form-label">First Name</label>
                                                 <div class="col-lg-6 col-md-8">
-                                                    <input type="text" class="form-control" id="f-name">
+                                                    <input type="text" name="firstname" class="form-control" value="{{$user->firstname}}" id="f-name">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="l-name" class="col-lg-3 col-md-4 col-form-label">Last Name</label>
                                                 <div class="col-lg-6 col-md-8">
-                                                    <input type="text" class="form-control" id="l-name">
+                                                    <input type="text" name="lastname" class="form-control" value="{{$user->lastname}}" id="l-name">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="email" class="col-lg-3 col-md-4 col-form-label">Email address</label>
                                                 <div class="col-lg-6 col-md-8">
-                                                    <input type="text" class="form-control" id="email">
+                                                    <input disabled type="text" name="email" class="form-control" value="{{$user->email}}" id="email">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="inputpassword" class="col-lg-3 col-md-4 col-form-label">Current password</label>
                                                 <div class="col-lg-6 col-md-8">
-                                                    <input type="password" class="form-control" id="inputpassword">
+                                                    <input disabled type="password" class="form-control" value="{{$user->password}}" id="inputpassword">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="newpassword" class="col-lg-3 col-md-4 col-form-label">New password</label>
                                                 <div class="col-lg-6 col-md-8">
-                                                    <input type="password" class="form-control" id="newpassword">
-                                                    <button class="btn show-btn" type="button">Show</button>
+                                                    <input type="password" name="password" class="form-control" id="newpassword" placeholder="new password">
+                                                    {{-- <button class="btn show-btn"  type="button">Show</button> --}}
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="c-password" class="col-lg-3 col-md-4 col-form-label">Confirm password</label>
                                                 <div class="col-lg-6 col-md-8">
-                                                    <input type="password" class="form-control" id="c-password">
-                                                    <button class="btn show-btn" type="button">Show</button>
+                                                    <input type="password" name="password_confirmation" class="form-control" id="c-password" placeholder="confirm password">
+                                                    {{-- <button class="btn show-btn" type="button">Show</button> --}}
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
+                                             {{-- @if (!empty($user->birthdate) > 0) --}}
+                                             <div class="form-group row">
+                                                 <label for="birth" class="col-lg-3 col-md-4 col-form-label">Birthdate</label>
+                                                 <div class="col-lg-6 col-md-8">
+                                                     <input type="text" name="birthdate" class="form-control" id="birth" placeholder="MM/DD/YYYY" value="{{!empty($user->birthdate) > 0 ? $user->birthdate : ""}}">
+                                                 </div>
+                                             </div>
+                                             {{-- @else
+                                             <div class="form-group row">
                                                 <label for="birth" class="col-lg-3 col-md-4 col-form-label">Birthdate</label>
-                                                <div class="col-lg-6 col-md-8">
-                                                    <input type="text" class="form-control" id="birth" placeholder="MM/DD/YYYY">
+                                                 <div class="col-lg-6 col-md-8">
+                                                     <input type="text" class="form-control" id="birth" placeholder="MM/DD/YYYY">
                                                 </div>
                                             </div>
+                                             @endif --}}
                                             <div class="form-check row p-0 mt-20">
                                                 <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-4">
                                                     <input class="form-check-input" value="#" id="offer" type="checkbox">
@@ -208,6 +243,7 @@
                 </div>
             </div>
         </div>
+
         <!-- My Account Page End Here -->
         @include('template.footer')
 

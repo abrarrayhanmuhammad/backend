@@ -19,7 +19,7 @@
             <div class="container">
                 <ol class="breadcrumb breadcrumb-list">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
+                    <li class="breadcrumb-item"><a href="{{url('shop')}}">Shop</a></li>
                     <li class="breadcrumb-item active">Checkout</li>
                 </ol>
             </div>

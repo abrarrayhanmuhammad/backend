@@ -52,7 +52,7 @@
                         <h3 class="footer-title">my account</h3>
                         <div class="footer-content">
                             <ul class="footer-list">
-                                <li class="first"><a href="#">My Addresses</a></li>
+                                <li class="first"><a  href="{{ route('account') . '#address' }}">My Addresses</a></li>
                                 <li><a href="#">Gift Vouchers</a></li>
                                 <li><a href="#">Returns and Exchanges</a></li>
                                 <li><a href="#">Shipping Options</a></li>

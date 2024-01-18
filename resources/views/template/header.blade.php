@@ -37,14 +37,20 @@
                         <li><a href="#">My Account<i class="fa fa-angle-down"></i></a>
                             <!-- Dropdown Start -->
                             <ul class="ht-dropdown">
+                                @if (Auth::user() != null)
                                 <li><a href="{{url('compare')}}">compare products</a></li>
                                 <li><a href="{{url('account')}}">my account</a></li>
                                 <li><a href="{{url('wishlist')}}">my wishlist</a></li>
+                                @else
                                 <li><a href="{{url('login')}}">sign in</a></li>
+                                @endif
                             </ul>
                             <!-- Dropdown End -->
                         </li>
+                        
+                        @if (Auth::user() == null)
                         <li><a href="{{url('register')}}">create an account</a></li>
+                        @endif
                     </ul>
                 </div>
                 <!-- Header Top Right End -->
@@ -77,6 +83,7 @@
                 <!-- Cart Box Start Here -->
                 <div class="col-xl-3 col-lg-4 col-md-5  col-sm-7 order-2 order-lg-3">
                     <div class="cart-box">
+                        @if (Auth::user() != null)
                         <ul class="d-flex justify-content-sm-between  align-items-center">
                             <li>
                                 <ul class="wish-compare-items">
@@ -121,6 +128,7 @@
                                 </ul>
                             </li>
                         </ul>
+                        @endif
                     </div>
                 </div>
                 <!-- Cart Box End Here -->
@@ -330,7 +338,7 @@
                                 </ul>
                                 <!-- Mega-Menu End -->
                             </li>
-                            <li><a class="drop-icon" href="shop.html">lighting</a>
+                            <li><a class="drop-icon" href="{{url('shop')}}">lighting</a>
                                 <!--  Mega-Menu Start -->
                                 <ul class="ht-dropdown megamenu big-megamneu">
                                     <!-- Single Column Start -->

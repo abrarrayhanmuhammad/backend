@@ -33,7 +33,7 @@ a,button,a:before,img,input{
     display: none;
 }
 .form-check-input {
-  margin-left: 0;
+    margin-left: 0;
 }
 .form-check-label {
   margin-bottom: 0;

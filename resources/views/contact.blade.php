@@ -99,7 +99,7 @@
     <!-- Bootstrap js -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Plugin js -->
-    <script src="js/plugins.js"></script>
+    <script src="/js/plugins.js"></script>
     <!-- google map js -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAq7MrCR1A2qIShmjbtLHSKjcEIEBEEwM"></script>
     <script>

@@ -35,9 +35,8 @@
                                 <h2>about our mission</h2>
                             </div>
                             <!-- Section Title End -->
-                            <p class="mb-15">Rian must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth,
-                                the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure</p>
-                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia sequuntur magni dolores eos qui ratione em </p>
+                            <p class="mb-15">{{$about->about}}</p>
+                            <p>{{$about->mission}}</p>
                             <a class="login-btn" href="#">Read more</a>
                         </div>
                     </div>
@@ -46,19 +45,19 @@
                             <div class="skill">
                                 <div class="progress">
                                     <div class="lead">UI & UX DESIGN</div>
-                                    <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: 85%; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="90%" class="progress-bar wow fadeInLeft animated"><span>85%</span></div>
+                                    <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: {{$about->uiux}}%; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="90%" class="progress-bar wow fadeInLeft animated"><span>{{$about->uiux}}%</span></div>
                                 </div>
                                 <div class="progress">
                                     <div class="lead">WEB DESIGN</div>
-                                    <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: 90%; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="70%" class="progress-bar wow fadeInLeft animated"><span>90%</span></div>
+                                    <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: {{$about->webdesign}}%; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="70%" class="progress-bar wow fadeInLeft animated"><span>{{$about->webdesign}}%</span></div>
                                 </div>
                                 <div class="progress">
                                     <div class="lead">APPS DESIGN</div>
-                                    <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: 75%; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="60%" class="progress-bar wow fadeInLeft animated"><span>75%</span></div>
+                                    <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: 75%; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="{{$about->appdesign}}%" class="progress-bar wow fadeInLeft animated"><span>{{$about->appsdesign}}%</span></div>
                                 </div>
                                 <div class="progress">
                                     <div class="lead">SKETCH DESIGN</div>
-                                    <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: 68%; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="80%" class="progress-bar wow fadeInLeft animated"><span>68%</span></div>
+                                    <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: 68%; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="{{$about->sketchdesign}}%" class="progress-bar wow fadeInLeft animated"><span>{{$about->sketchdesign}}%</span></div>
                                 </div>
                             </div>
                         </div>
@@ -75,10 +74,11 @@
                 </div>
                 <div class="row text-center">
                     <!-- Single Team Start Here -->
+                    @foreach ($team as $t)
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-team mb-all-30">
                             <div class="team-img sidebar-img sidebar-banner">
-                                <a href="#"><img src="img/team/2.jpg" alt="team-image"></a>
+                                <a href="#"><img src="{{asset('storage/team/'.$t->image)}}" alt="team-image"></a>
                                 <div class="team-link">
                                     <ul>
                                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -88,17 +88,18 @@
                                 </div>
                             </div>
                             <div class="team-info">
-                                <h4>Asta Kirana</h4>
-                                <p>web designer</p>
+                                <h4>{{$t->name}}</h4>
+                                <p>{{$t->position}}</p>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                     <!-- Single Team End Here -->
-                    <!-- Single Team Start Here -->
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- Single Team Start Here -->                              
+                    {{-- <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-team mb-all-30">
                             <div class="team-img sidebar-img sidebar-banner">
-                                <a href="#"><img src="img/team/1.jpg" alt="team-image"></a>
+                                <a href="#"><img src="{{assets('storage/team/')}}" alt="team-image"></a>
                                 <div class="team-link">
                                     <ul>
                                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -112,10 +113,11 @@
                                 <p>web developer</p>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
+                    
                     <!-- Single Team End Here -->
                     <!-- Single Team Start Here -->
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    {{-- <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-team mb-xxs-30">
                             <div class="team-img sidebar-img sidebar-banner">
                                 <a href="#"><img src="img/team/3.jpg" alt="team-image"></a>
@@ -132,10 +134,10 @@
                                 <p>Graphic Designer</p>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- Single Team End Here -->
                     <!-- Single Team Start Here -->
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    {{-- <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-team">
                             <div class="team-img sidebar-img sidebar-banner">
                                 <a href="#"><img src="img/team/4.jpg" alt="team-image"></a>
@@ -152,7 +154,7 @@
                                 <p>php developer</p>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- Single Team End Here -->
                 </div>
             </div>

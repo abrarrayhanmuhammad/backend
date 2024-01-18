@@ -5,7 +5,7 @@
 <!-- Mirrored from htmldemo.net/pander/pander-v3/product-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2024 02:13:55 GMT -->
 <head>
     @include('template.css')
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <body>
     <!--[if lte IE 9]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -21,7 +21,7 @@
             <div class="container">
                 <ol class="breadcrumb breadcrumb-list">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
+                    <li class="breadcrumb-item"><a href="{{url('shop')}}">Shop</a></li>
                     <li class="breadcrumb-item active">Product Details</li>
                 </ol>
             </div>
@@ -209,7 +209,7 @@
                                 <p class="review-mini-title">your rating</p>
                                 <ul class="review-list">
                                     <!-- Single Review List Start -->
-                                    <li>
+                                    <li class="rating-item" data-rating="3">
                                         <span>Quality</span>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -219,8 +219,8 @@
                                     </li>
                                     <!-- Single Review List End -->
                                     <!-- Single Review List Start -->
-                                    <li>
-                                        <span>price</span>
+                                    <li class="rating-item" data-rating="2">
+                                        <span>Price</span>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star-o"></i>
@@ -229,8 +229,8 @@
                                     </li>
                                     <!-- Single Review List End -->
                                     <!-- Single Review List Start -->
-                                    <li>
-                                        <span>value</span>
+                                    <li class="rating-item" data-rating="4">
+                                        <span>Value</span>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -239,6 +239,23 @@
                                     </li>
                                     <!-- Single Review List End -->
                                 </ul>
+                                <script>
+                                    $(document).ready(function() {
+                                        // Handle star rating click
+                                        $('.rating-item i').click(function() {
+                                            // Reset all stars
+                                            $(this).siblings('i').removeClass('fa-star').addClass('fa-star-o');
+                                
+                                            // Set stars up to the clicked one
+                                            $(this).removeClass('fa-star-o').addClass('fa-star');
+                                            $(this).prevAll('i').removeClass('fa-star-o').addClass('fa-star');
+                                
+                                            // Set the rating value in the data-rating attribute
+                                            var rating = $(this).index() + 1;
+                                            $(this).parent('.rating-item').attr('data-rating', rating);
+                                        });
+                                    });
+                                </script>
                                 <!-- Reviews Field Start -->
                                 <div class="riview-field mt-40">
                                     <form autocomplete="off" action="#">

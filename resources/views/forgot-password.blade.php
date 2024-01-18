@@ -1,7 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
 
-
 <!-- Mirrored from htmldemo.net/pander/pander-v3/forgot-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2024 02:14:02 GMT -->
 @include('template.css')
 

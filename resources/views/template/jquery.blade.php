@@ -20,6 +20,6 @@
 <!-- Bootstrap js -->
 <script src="js/bootstrap.min.js"></script>
 <!-- Plugin js -->
-<script src="js/plugins.js"></script>
+<script src="/js/plugins.js"></script>
 <!-- Main activaion js -->
 <script src="js/main.js"></script>

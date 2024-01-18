@@ -33,8 +33,15 @@ NOTE: main.js, All custom script and plugin activation script in this file.
     
 ================================================*/
 
+
 (function($) {
     "use Strict";
+
+    if (location.hash == "#detail") {
+        $('#tab-panes div:first-child').removeClass('show active')
+        $('#tab-panes div:last-child').addClass('show active')
+    }
+
 
     /*--------------------------
     1. Newsletter Popup
@@ -451,5 +458,6 @@ NOTE: main.js, All custom script and plugin activation script in this file.
             }
         }
     })
+
 
 })(jQuery);

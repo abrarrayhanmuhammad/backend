@@ -19,7 +19,7 @@
         <div class="breadcrumb-area">
             <div class="container">
                 <ol class="breadcrumb breadcrumb-list">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
                     <li class="breadcrumb-item active">blog</li>
                 </ol>
             </div>
@@ -42,13 +42,13 @@
                                 </div>
                             </div>
                             <div class="blog-content">
-                                <h4><a href="blog-details.html">The History and the Hype</a></h4>
+                                <h4><a href="{{url('blog-details')}}">The History and the Hype</a></h4>
                                 <ul class="meta-box">
                                     <li class="meta-date"><span><i class="fa fa-calendar" aria-hidden="true"></i>dec 17, 2018</span></li>
                                     <li><i class="fa fa-user" aria-hidden="true"></i>By <a href="#"> Pander</a></li>
                                 </ul>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the ...</p>
-                                <a href="blog-details.html" class="blg-readmore">Read More</a>
+                                <a href="{{url('blog-details')}}" class="blg-readmore">Read More</a>
                             </div>
                         </div>
                         <!-- Single Blog End -->
@@ -66,13 +66,13 @@
                                 </div>
                             </div>
                             <div class="blog-content">
-                                <h4><a href="blog-details.html">Hooker Furniture Corporation</a></h4>
+                                <h4><a href="{{url('blog-details')}}">Hooker Furniture Corporation</a></h4>
                                 <ul class="meta-box">
                                     <li class="meta-date"><span><i class="fa fa-calendar" aria-hidden="true"></i>dec 8, 2018</span></li>
                                     <li><i class="fa fa-user" aria-hidden="true"></i>By <a href="#"> Pander</a></li>
                                 </ul>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the ...</p>
-                                <a href="blog-details.html" class="blg-readmore">Read More</a>
+                                <a href="{{url('blog-details')}}" class="blg-readmore">Read More</a>
                             </div>
                         </div>
                         <!-- Single Blog End -->
@@ -90,13 +90,13 @@
                                 </div>
                             </div>
                             <div class="blog-content">
-                                <h4><a href="blog-details.html">The History and the Hype</a></h4>
+                                <h4><a href="{{url('blog-details')}}">The History and the Hype</a></h4>
                                 <ul class="meta-box">
                                     <li class="meta-date"><span><i class="fa fa-calendar" aria-hidden="true"></i>dec 13, 2018</span></li>
                                     <li><i class="fa fa-user" aria-hidden="true"></i>By <a href="#"> Pander</a></li>
                                 </ul>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the ...</p>
-                                <a href="blog-details.html" class="blg-readmore">Read More</a>
+                                <a href="{{url('blog-details')}}" class="blg-readmore">Read More</a>
                             </div>
                         </div>
                         <!-- Single Blog End -->
@@ -114,13 +114,13 @@
                                 </div>
                             </div>
                             <div class="blog-content">
-                                <h4><a href="blog-details.html">Hooker Furniture Corporation</a></h4>
+                                <h4><a href="{{url('blog-details')}}">Hooker Furniture Corporation</a></h4>
                                 <ul class="meta-box">
                                     <li class="meta-date"><span><i class="fa fa-calendar" aria-hidden="true"></i>dec 26, 2018</span></li>
                                     <li><i class="fa fa-user" aria-hidden="true"></i>By <a href="#"> Pander</a></li>
                                 </ul>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the ...</p>
-                                <a href="blog-details.html" class="blg-readmore">Read More</a>
+                                <a href="{{url('blog-details')}}" class="blg-readmore">Read More</a>
                             </div>
                         </div>
                         <!-- Single Blog End -->
@@ -138,13 +138,13 @@
                                 </div>
                             </div>
                             <div class="blog-content">
-                                <h4><a href="blog-details.html">The History and the Hype </a></h4>
+                                <h4><a href="{{url('blog-details')}}">The History and the Hype </a></h4>
                                 <ul class="meta-box">
                                     <li class="meta-date"><span><i class="fa fa-calendar" aria-hidden="true"></i>dec 11, 2018</span></li>
                                     <li><i class="fa fa-user" aria-hidden="true"></i>By <a href="#"> Pander</a></li>
                                 </ul>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the ...</p>
-                                <a href="blog-details.html" class="blg-readmore">Read More</a>
+                                <a href="{{url('blog-details')}}" class="blg-readmore">Read More</a>
                             </div>
                         </div>
                         <!-- Single Blog End -->
@@ -162,13 +162,13 @@
                                 </div>
                             </div>
                             <div class="blog-content">
-                                <h4><a href="blog-details.html">Etiam eros massa</a></h4>
+                                <h4><a href="{{url('blog-details')}}">Etiam eros massa</a></h4>
                                 <ul class="meta-box">
                                     <li class="meta-date"><span><i class="fa fa-calendar" aria-hidden="true"></i>dec 9, 2018</span></li>
                                     <li><i class="fa fa-user" aria-hidden="true"></i>By <a href="#"> Pander</a></li>
                                 </ul>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the ...</p>
-                                <a href="blog-details.html" class="blg-readmore">Read More</a>
+                                <a href="{{url('blog-details')}}" class="blg-readmore">Read More</a>
                             </div>
                         </div>
                         <!-- Single Blog End -->
@@ -188,13 +188,13 @@
                                 </div>
                             </div>
                             <div class="blog-content">
-                                <h4><a href="blog-details.html">Etiam eros massa</a></h4>
+                                <h4><a href="{{url('blog-details')}}">Etiam eros massa</a></h4>
                                 <ul class="meta-box">
                                     <li class="meta-date"><span><i class="fa fa-calendar" aria-hidden="true"></i>sep 24, 2018</span></li>
                                     <li><i class="fa fa-user" aria-hidden="true"></i>By <a href="#"> Pander</a></li>
                                 </ul>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the ...</p>
-                                <a href="blog-details.html" class="blg-readmore">Read More</a>
+                                <a href="{{url('blog-details')}}" class="blg-readmore">Read More</a>
                             </div>
                         </div>
                         <!-- Single Blog End -->
@@ -212,13 +212,13 @@
                                 </div>
                             </div>
                             <div class="blog-content">
-                                <h4><a href="blog-details.html">The History and the Hype</a></h4>
+                                <h4><a href="{{url('blog-details')}}">The History and the Hype</a></h4>
                                 <ul class="meta-box">
                                     <li class="meta-date"><span><i class="fa fa-calendar" aria-hidden="true"></i>jul 22, 2018</span></li>
                                     <li><i class="fa fa-user" aria-hidden="true"></i>By <a href="#"> Pander</a></li>
                                 </ul>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the ...</p>
-                                <a href="blog-details.html" class="blg-readmore">Read More</a>
+                                <a href="{{url('blog-details')}}" class="blg-readmore">Read More</a>
                             </div>
                         </div>
                         <!-- Single Blog End -->
@@ -236,13 +236,13 @@
                                 </div>
                             </div>
                             <div class="blog-content">
-                                <h4><a href="blog-details.html">Etiam eros massa</a></h4>
+                                <h4><a href="{{url('blog-details')}}">Etiam eros massa</a></h4>
                                 <ul class="meta-box">
                                     <li class="meta-date"><span><i class="fa fa-calendar" aria-hidden="true"></i>aug 24, 2018</span></li>
                                     <li><i class="fa fa-user" aria-hidden="true"></i>By <a href="#"> Pander</a></li>
                                 </ul>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the ...</p>
-                                <a href="blog-details.html" class="blg-readmore">Read More</a>
+                                <a href="{{url('blog-details')}}" class="blg-readmore">Read More</a>
                             </div>
                         </div>
                         <!-- Single Blog End -->
